@@ -1,4 +1,4 @@
-module github.com/jlaffaye/ftp
+module github.com/lanyi1998/ftp
 
 go 1.17
 
