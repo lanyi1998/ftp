@@ -160,7 +160,7 @@ func Dial(addr string, options ...DialOption) (*ServerConn, error) {
 		netConn:  tconn,
 		host:     remoteAddr.IP.String(),
 	}
-
+	c.netConn.SetDeadline(time.Now().Add(5 * time.Second))
 	_, _, err = c.conn.ReadResponse(StatusReady)
 	if err != nil {
 		_ = c.Quit()
